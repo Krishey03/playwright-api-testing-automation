@@ -1,18 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, defineConfig } from "@playwright/test";
+//import test from "node:test";
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('GET all products', async ({ request }) => {
+  const response = await request.get(`/shop/products/get`)
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  expect(response.status()).toBe(200)
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+  const responseBody = await response.json()
+  expect(responseBody).toHaveProperty('data')
+  expect(Array.isArray(responseBody.data)).toBeTruthy()
+})
