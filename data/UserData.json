@@ -1,0 +1,25 @@
+{
+    "user1": {
+        "_id": "6a9f75fb6beec2a8c440e8f8",
+        "email": "eric_keebler92@yahoo.com",
+        "password": "Password123"
+    },
+    
+    "user2": {
+        "_id": "6a9f76016beec2a8c440e8fb",
+        "email": "clotilde.kuphal81@gmail.com",
+        "password": "Password123"
+    },
+
+    "user3": {
+        "_id": "6a9f76036beec2a8c440e8fe",
+        "email": "mitchel_swift@yahoo.com",
+        "password": "Password123"
+    },
+
+    "performanceUser": {
+        "_id": "6a9f76056beec2a8c440e901",
+        "email": "mitchel_swift@yahoo.com",
+        "password": "Password123"
+    }
+}
